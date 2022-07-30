@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-oreyesdev",
+  "version": "1.0.0",
+  "description": "This is my personal portfolio, you will find content about me",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insert-oreyes/portfolio-oreyesdev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/insert-oreyes/portfolio-oreyesdev/issues"
+  },
+  "homepage": "https://github.com/insert-oreyes/portfolio-oreyesdev#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
