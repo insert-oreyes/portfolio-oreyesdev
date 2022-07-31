@@ -29,8 +29,10 @@ body{
     position: relative;
 }
 
+
+
 header{
-    padding: 40px 0 30px;
+    padding: 20px 0 30px;
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -183,10 +185,6 @@ span{
     border: 2px solid #F19333;
     border-radius: 30px;
     cursor: pointer;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
 }
 
 .container .hero-text button:hover{
@@ -194,14 +192,10 @@ span{
     border: 2px solid #F19333;
     color: #F19333;
     transition: 0.4s;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s;
-    -o-transition: 0.4s;
 }
 
 .bottom{
-    margin-top: 243px;
+    /* margin-top: 243px; */
     padding-bottom: 40px;
 }
 
@@ -215,4 +209,59 @@ span{
     nav .hamMenu {
         display: initial
     }
+    .click{
+        top: 46px;
+    }
+    .click span{
+        position: absolute;
+        margin-top: 12px;
+    }
+    .click span:first-child{
+        transform: rotate(-40deg);
+    }
+    .click span:nth-child(2){
+        opacity: 0;
+        margin: 0;
+    }
+    .click span:last-child{
+        transform: rotate(40deg);
+        top: 0;
+    }
+    nav .navList{
+        position: absolute;
+        top: 90px;
+        right: -65%;
+        bottom: 0%;
+        width: 60%;
+        height: 50%;
+        background: black;
+        z-index: 2;
+        padding: 6% 9%;
+        transition: .3s right;
+        border-radius: 10px;
+}
+nav .navList li{
+    display: block;
+}
+nav .navList li a{
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 0;
+    margin-bottom: 40px;
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+nav .navList li.btn a{
+    position: absolute;
+    bottom: 0%;
+    right: 20%;
+    left: 20%;
+    padding: 7px 15px;
+    font-size: 14px;
+}
+nav .list.open{
+    right: 0;
+}
 }
