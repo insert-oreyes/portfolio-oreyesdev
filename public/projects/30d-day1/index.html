@@ -1,77 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="../../styles.css" />
-    <link rel="stylesheet" href="blogPage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>30d - Day 1</title>
+    <link rel="stylesheet" href="30d-day1.css" />
+    <title>Day1-Soundpad</title>
   </head>
   <body>
-    <section class="hero">
-      <div class="mainWidth">
-        <header>
-          <div class="logo">
-            <i class="fa-solid fa-bullseye"></i>
-          </div>
+    <div class="drumsContainer">
+      <!-- Keys starts here -->
+      <div data-key="65" class="key">
+        <kbd>A</kbd>
+        <span class="sound">Fart</span>
+      </div>
 
-          <nav>
-            <div class="hamMenu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+      <div data-key="83" class="key">
+        <kbd>S</kbd>
+        <span class="sound">Boat</span>
+      </div>
 
-            <ul class="navList">
-              <li><a href="/">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li class="btn"><a href="#">Contact me</a></li>
-            </ul>
-          </nav>
-        </header>
+      <div data-key="68" class="key">
+        <kbd>D</kbd>
+        <span class="sound">Door</span>
+      </div>
 
-  
-        <div class="cardsContainer">
-          <div class="div1 blogCard" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-            <div class="text">
-              <h3>leetcode algorith solutions</h3>
-              <p>Currently working</p>
-            </div>
-          </div>
-          <div class="div2 blogCard2" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-            <div class="text">
-              <h3>Lorem ipsum dolor</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-          </div>
-          <div class="div3 blogCard2" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-            <div class="text">
-              <h3>Lorem ipsum dolor</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-          </div>
-          <div class="div4 blogBanner" style="background-image: url(https://images.unsplash.com/photo-1557004396-66e4174d7bf6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60)">
-            <div class="text">
-              <h3>Lorem ipsum dolor</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-          </div>
-        </div>
-        
+      <!-- Keys ends here -->
+    </div>
 
+    <!-- Audio elements to link starts here -->
+    <audio data-key="65" src="./audio/fart-sound-effect.mp3"></audio>
+    <audio data-key="83" src="./audio/boat-horn-sound-effect.mp3"></audio>
+    <audio data-key="68" src="./audio/Door-knock-sound-effect.mp3"></audio>
+    <!-- Audio elements to link ends here -->
+    <script>
+      function playSound(e) {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+        if (!audio) {
+          return //This empty return stops the function
+        }
+        audio.currentTime = 0 //rewind to the start
+        audio.play()
+        key.classList.add('playing')
+      }
 
+      function removeTransition(e) {
+        if (e.propertyName !== 'transform') return
+        this.classList.remove('playing')
+      }
+
+      const keys = document.querySelectorAll('.key')
+      keys.forEach((key) =>
+        key.addEventListener('transitionend', removeTransition)
+      )
+      window.addEventListener('keydown', playSound)
+    </script>
   </body>
 </html>
