@@ -1,0 +1,67 @@
+:root {
+    --color1: #000000;
+    --color1Alt: #1D2723;
+    --color2: #ecf0f3;
+    --color3: #efe7c9;
+    --color4: #e5d07c;
+    --color5: #e49d0f;
+    --backg1: #ecf0f3;
+    --box-shadow1: .375rem 375rem 0.813rem #ffffff, 
+                .375rem 375rem 0.813rem #00000029;
+
+    --backg2: #e7aeee;
+    --backg3: radial-gradient(circle, #e7aeee84 0%, rgba(215, 233, 148, 0.452) 82%); 
+                
+}
+
+/* html {
+  box-sizing: border-box;
+  background: url("./oh-la-la.jpeg") center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+} */
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: url("https://source.unsplash.com/nDqA4d5NL0k/2000x2000");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#bands {
+  list-style: inside square;
+  font-size: 20px;
+  background: white;
+  width: 500px;
+  margin: auto;
+  padding: 0;
+  box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+#bands li {
+  border-bottom: 1px solid #efefef;
+  padding: 20px;
+}
+
+#bands li:last-child {
+  border-bottom: 0;
+}
+
+a {
+  color: #ffc600;
+  text-decoration: none;
+}
